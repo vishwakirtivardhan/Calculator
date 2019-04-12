@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>calculater</title>
+</head>
+<body>
+
+<input type="number" name="" id="input">
+
+<button onclick="add()" id="btn">add</button>
+<button onclick="result()">result</button>
+<p id="result_show"></p>
+
+<script type="text/javascript">
+
+var num=0,num2,num1,num3;
+function add() {
+
+if (num==0) {
+	num++;
+	num1=Number(document.getElementById('input').value);
+	console.log(num1);
+	do
+	document.getElementById('btn').text='result';
+}
+else{
+	num1+=Number(document.getElementById('input').value);
+	document.getElementById('btn').text='result';
+	document.getElementById('result_show').innerHTML=num1;
+
+}
+
+
+}
+
+function result(){
+console.log('result function running'+num1);
+num2= Number(document.getElementById('input').value);
+document.getElementById('result_show').innerHTML=num1+num2;
+document.getElementById('input').value="";
+document.getElementById('input').focus();
+}
+
+	
+</script>
+</body>
+</html>
