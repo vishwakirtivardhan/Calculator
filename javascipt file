@@ -3,44 +3,111 @@
 <head>
 	<title>calculater</title>
 </head>
-<body>
-
-<input type="number" name="" id="input">
-
-<button onclick="add()" id="btn">add</button>
-<button onclick="result()">result</button>
+<body onload="bodyload()">
+<input type="number" name="" id="input" placeholder="Enter NO.">
+<button onclick="add()" id="btn_add">add</button>
+<button onclick="sub()" id="btn_sub">Subtract</button>
+<button onclick="multiplay()" id="btn_mul">Multiplay</button>
+<button onclick="divide()" id="btn_divide">Divide</button>
 <p id="result_show"></p>
-
 <script type="text/javascript">
-
 var num=0,num2,num1,num3;
-function add() {
+var input = document.getElementById('input');
+var btn_add = document.getElementById('btn_add');
+var btn_sub = document.getElementById('btn_sub');
+var btn_mul = document.getElementById('btn_mul');
+var btn_divide = document.getElementById('btn_divide');
+function bodyload(){
+	input.focus();
+}
+// function  for show calculation result ;
+function show_result(){
 
+	document.getElementById('result_show').innerHTML=num1;
+					}
+// ADD 
+function add() {
 if (num==0) {
 	num++;
-	num1=Number(document.getElementById('input').value);
-	console.log(num1);
-	do
-	document.getElementById('btn').text='result';
+	num1 = Number(input.value);
+	input.value='';
+	input.focus();
+	btn_add.innerHTML="result";
+	show_result();
+
 }
 else{
-	num1+=Number(document.getElementById('input').value);
-	document.getElementById('btn').text='result';
-	document.getElementById('result_show').innerHTML=num1;
+	num1+=Number(input.value);
+	btn_add.innerHTML='ADD';
+	input.value='';
+	input.focus();
+	show_result();
+	
+}
+}// End Of Add
+
+// Code for the Subract 
+
+function sub() {
+if (num==0) {
+	num++;
+	num1 = Number(input.value);
+	input.value='';
+	input.focus();
+	btn_sub.innerHTML="result";
+	show_result();
 
 }
-
+else{
+	num1-=Number(input.value);
+	btn_sub.innerHTML='Subract';
+	input.value='';
+	input.focus();
+	show_result();
+	
+}
+}
+// code for multiply btn
+function multiplay() {
+if (num==0) {
+	num++;
+	num1 = Number(input.value);
+	input.value='';
+	input.focus();
+	btn_mul.innerHTML="result";
+	show_result();
 
 }
-
-function result(){
-console.log('result function running'+num1);
-num2= Number(document.getElementById('input').value);
-document.getElementById('result_show').innerHTML=num1+num2;
-document.getElementById('input').value="";
-document.getElementById('input').focus();
+else{
+	num1*=Number(input.value);
+	btn_mul.innerHTML='Multiplay';
+	input.value='';
+	input.focus();
+	show_result();
+	
 }
+}
+// code of for divide
 
+function divide() {
+if (num==0) {
+	num++;
+	num1 = Number(input.value);
+	input.value='';
+	input.focus();
+	btn_divide.innerHTML="result";
+	show_result();
+
+}
+else{
+	num1/=Number(input.value);
+	btn_divide.innerHTML='Divide';
+	input.value='';
+	input.focus();
+	show_result();
+	
+}
+}// END of all btn code
 	
 </script>
 </body>
